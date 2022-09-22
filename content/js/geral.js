@@ -59,7 +59,7 @@ function Saudacao(){
 	if(horaAtual >= 0 && horaAtual <= 6) {
 		saudacao = "Boa madrugada, reservou um tempo para você descansar?";
 	}
-	else if(horaAtual > 6) {
+	else if(horaAtual > 6 && horaAtual < 12) {
 		saudacao = "Bom dia, já se exercitou hoje?";
 	}
 	else if(horaAtual >= 12 && horaAtual < 18) {
