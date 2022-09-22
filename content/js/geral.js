@@ -1,12 +1,56 @@
-/*window.addEventListener("orientationchange", function() {
-  if(window.orientation == 0){
-	document.getElementById("ColunaLinhas").style.display = "none";
-  }
-  else if(window.orientation == 90){
-	document.getElementById("ColunaLinhas").style.display = "table-cell";
-  }
+var tamanhoFonte = "20px";
+var larguraBotao = "130px";
+var alturaBotao = "60px";
+var raioBordaBotao = "19px";
+
+var tamanhoFonteModoRetrato = "10px";
+var larguraBotaoModoRetrato = "80px";
+var alturaBotaoModoRetrato = "40px";
+var raioBordaBotaoModoRetrato = "8px";
+
+var tamanhoFontePaisagem = "14px";
+var larguraBotaoModoPaisagem = "80px";
+var alturaBotaoModoPaisagem = "40px";
+var raioBordaBotaoModoPaisagem = "8px";
+
+window.addEventListener("orientationchange", function() {
+	SetarTamanhosModoPaisagem();
+
+	if(window.orientation == 0){
+		SetarTamanhosModoRetrato();
+	}
+	else if(window.orientation == 90){
+		SetarTamanhosModoPaisagem();
+	}
 }, false);
-*/
+
+function SetarTamanhosModoPaisagem()
+{
+	SetarTamanhos(tamanhoFontePaisagem, larguraBotaoModoPaisagem, alturaBotaoModoPaisagem, raioBordaBotaoModoPaisagem);
+}
+
+function SetarTamanhosModoRetrato()
+{
+	SetarTamanhos(tamanhoFonteModoRetrato, larguraBotaoModoRetrato, alturaBotaoModoRetrato, raioBordaBotaoModoRetrato);
+}
+
+function SetarTamanhosPadrao(){
+	SetarTamanhos(tamanhoFonte, larguraBotao, alturaBotao, raioBordaBotao);
+}
+
+function SetarTamanhos(fontSize, widthButton, heightButton, borderRadius){
+	document.getElementById("Copyright").style.fontSize = fontSize;
+
+	document.getElementById("LimparButton").style.fontSize = fontSize;
+	document.getElementById("LimparButton").style.width = widthButton;
+	document.getElementById("LimparButton").style.height = heightButton;
+	document.getElementById("LimparButton").style.borderRadius = borderRadius;
+
+	document.getElementById("ExecutarButton").style.fontSize = fontSize;
+	document.getElementById("ExecutarButton").style.width = widthButton;
+	document.getElementById("ExecutarButton").style.height = heightButton;
+	document.getElementById("ExecutarButton").style.borderRadius = borderRadius;
+}
 
 function Saudacao(){
 	var horaAtual = new Date().getHours();
@@ -31,11 +75,17 @@ function Saudacao(){
 window.onload = function() {
 	CarregarLinhas();
 	
-	Saudacao();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		SetarTamanhosModoRetrato();
+    }else {
+		SetarTamanhosPadrao();
+	}
+	
+	document.getElementById("Copyright").style.display = "block";
 
-    /*if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		document.getElementById("ColunaLinhas").style.display = "table-cell";
-    }*/
+	setTimeout(function () {
+		Saudacao();
+    }, 300);
 }
 document.getElementById("AnoAtual").innerHTML = new Date().getFullYear();
 

@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>jsOnline</title>
+	<title>JS Online - sua microengine de programação?</title>
 	<meta charset="utf-8">
     <meta name="author" content="Murilo Siqueira">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
@@ -12,7 +12,7 @@
 			<td class="widthFirstColumn" id="ColunaLinhas"><textarea class="black alignCenter" readonly id="Linhas"></textarea></td>
 			<td class="height90">
 				<textarea maxlength="51800" class="black" id="ScriptDinamico" onscroll="AjustarScroll()" onkeypress="VerificarScroll()">
-/*¯\_(ツ)_/¯ 
+/*		¯\_(ツ)_/¯ 
 
 Olá, Mundo! Sou o Javascript Online 
 Aperte Executar e teste seus códigos!
@@ -44,13 +44,15 @@ alert(saudacao);
 				<br />
 				<button id="ExecutarButton" onclick="Executar()";>Executar</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<button id="LimparButton" onclick="Limpar()";>Limpar</button>
+				<button id="LimparButton" onclick="Limpar()";>
+					Limpar
+				</button>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2" class="alignCenter">
 				<br />
-				<h2>&copy; 1986-<span id="AnoAtual"></span> e além - Eduardo Favero (Design) / Murilo Siqueira (Dev)</h2>
+				<span id="Copyright">&copy; 1986-<span id="AnoAtual"></span> - <a class="cvOnline" href="https://oimob.com/eduardo" target="_blank">Eduardo Favero (Design)</a> / <a class="cvOnline" href="https://docs.google.com/document/d/1Jn6ptOdHoIxWAcLUS6Ai-K2DTH29gHn7Dn5BIkRmLsY/edit?usp=sharing" target="_blank">Murilo Siqueira (Dev)</a></span>
 			</td>
 		</tr>
 	</table>	
