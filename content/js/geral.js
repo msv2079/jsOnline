@@ -130,7 +130,7 @@ function RemoverMeuScript(){
 }
 
 function Limpar(){
-	var result = confirm("Está certo disso?");
+	var result = confirm("Tem certeza?");
 	
 	if(result){
 		RemoverMeuScript();
