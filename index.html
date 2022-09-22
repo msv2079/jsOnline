@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>jsOnline</title>
+	<meta charset="utf-8">
+    <meta name="author" content="Murilo Siqueira">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="content/css/geral.css" />
+</head>
+<body>
+	<table id="MeuScriptTable" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="widthFirstColumn" id="ColunaLinhas"><textarea class="black alignCenter" readonly id="Linhas"></textarea></td>
+			<td class="height90">
+				<textarea maxlength="51800" class="black" id="ScriptDinamico" onscroll="AjustarScroll()" onkeypress="VerificarScroll()">
+/*¯\_(ツ)_/¯ 
+
+Olá, Mundo! Sou o Javascript Online 
+Aperte Executar e teste seus códigos!
+
+♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪*/
+
+var horaAtual = new Date().getHours();
+var saudacao = "";
+
+if(horaAtual >= 0 && horaAtual <= 6) {
+	saudacao = "Boa madrugada, vai mais um café?";
+}
+else if(horaAtual > 6) {
+	saudacao = "Bom dia, hora de programar o dia!";
+}
+else if(horaAtual >= 12 && horaAtual < 18) {
+	saudacao = "Boa tarde, já concluiu o que programou?";
+}
+else {
+	saudacao = "Boa noite, e agora? já terminou? Se não, sugiro começar a preparar o café";
+}
+
+alert(saudacao);
+				</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="alignCenter">
+				<br />
+				<button id="ExecutarButton" onclick="Executar()";>Executar</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<button id="LimparButton" onclick="Limpar()";>Limpar</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="alignCenter">
+				<br />
+				<h2>&copy; 1986-<span id="AnoAtual"></span> e além - Eduardo Favero (Design) / Murilo Siqueira (Dev)</h2>
+			</td>
+		</tr>
+	</table>	
+</body>
+<script src="content/js/geral.js"></script>
+</html>
